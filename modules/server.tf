@@ -105,7 +105,7 @@ resource "azurerm_subnet" "servers" {
   name                 = "${var.demo_prefix}-servers"
   virtual_network_name = azurerm_virtual_network.awg.name
   resource_group_name  = azurerm_resource_group.demostack.name
-  address_prefix       = "10.0.30.0/24"
+  address_prefixes       = ["10.0.30.0/24"]
 }
 
 
