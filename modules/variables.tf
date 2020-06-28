@@ -197,6 +197,11 @@ variable "vaultlicense" {
   default     = ""
 }
 
+variable "nomadlicense" {
+  description = "Enterprise License for Nomad"
+  default     = ""
+}
+
 variable "consullicense" {
   description = "Enterprise License for Consul"
   default     = ""
