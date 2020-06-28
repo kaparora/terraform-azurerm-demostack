@@ -86,6 +86,6 @@ resource "azurerm_key_vault_key" "demostack" {
     TTL       = var.TTL
     owner     = var.owner
     demostack = var.consul_join_tag_value
-  depends_on = [azurerm_key_vault_access_policy.demostack_vm]
 }
+  depends_on = [azurerm_key_vault_access_policy.demostack_vm]
 }
