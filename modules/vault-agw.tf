@@ -10,7 +10,7 @@ resource "azurerm_subnet" "vault-awg" {
   name                 = "${var.demo_prefix}-vault-awg"
   virtual_network_name = azurerm_virtual_network.awg.name
   resource_group_name  = azurerm_resource_group.demostack.name
-  address_prefix       = "10.0.10.0/24"
+  address_prefixes       = ["10.0.10.0/24"]
 }
 
 
