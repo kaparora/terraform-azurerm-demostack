@@ -93,27 +93,27 @@ resource "azurerm_application_gateway" "nomad-awg" {
     unhealthy_threshold = "3"
   }
 
-authentication_certificate{
+trusted_root_certificate{
  name = "server-0"
  data = tls_locally_signed_cert.servers.0.cert_pem
 }
-authentication_certificate{
+trusted_root_certificate{
  name = "server-1"
  data = tls_locally_signed_cert.servers.1.cert_pem
  }
-authentication_certificate{
+trusted_root_certificate{
  name = "server-2"
  data = tls_locally_signed_cert.servers.2.cert_pem
 }
-authentication_certificate{
+trusted_root_certificate{
  name = "worker-0"
  data = tls_locally_signed_cert.workers.0.cert_pem
 }
-authentication_certificate{
+trusted_root_certificate{
  name = "worker-1"
  data = tls_locally_signed_cert.workers.1.cert_pem
 }
-authentication_certificate{
+trusted_root_certificate{
  name = "worker-2"
  data = tls_locally_signed_cert.workers.2.cert_pem
 }
@@ -125,26 +125,7 @@ authentication_certificate{
     protocol              = "Https"
     request_timeout       = 1
     probe_name            = "nomad-health"
-    authentication_certificate{
-       name = "server-0"
-    }
-    authentication_certificate{
-       name = "server-1"
-    }
-    authentication_certificate{
-       name = "server-2"
-    }
-    authentication_certificate{
-       name = "worker-0"
-    }
-    authentication_certificate{
-       name = "worker-1"
-    }
-    authentication_certificate{
-       name = "worker-2"
-    }
-
-
+    trusted_root_certificate_names = ["server-0", "server-1", "server-2", "worker-0", "worker-1", "worker-2"]
   }
 
 
