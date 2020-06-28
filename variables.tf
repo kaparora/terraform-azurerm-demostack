@@ -176,6 +176,11 @@ variable "consullicense" {
   default     = ""
 }
 
+variable "nomadlicense" {
+  description = "Enterprise License for Nomad"
+  default     = ""
+}
+
 variable "ca_key_algorithm" {
   default = ""
 }
