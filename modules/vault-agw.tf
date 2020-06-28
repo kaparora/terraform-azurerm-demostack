@@ -88,15 +88,15 @@ resource "azurerm_application_gateway" "vault-awg" {
     unhealthy_threshold = "3"
   }
 
-authentication_certificate{
+trusted_root_certificate{
  name = "server-0"
  data = tls_locally_signed_cert.servers.0.cert_pem
 }
-authentication_certificate{
+trusted_root_certificate{
  name = "server-1"
  data = tls_locally_signed_cert.servers.1.cert_pem
 }
-authentication_certificate{
+trusted_root_certificate{
  name = "server-2"
  data = tls_locally_signed_cert.servers.2.cert_pem
 }
@@ -108,15 +108,7 @@ authentication_certificate{
     protocol              = "Https"
     request_timeout       = 1
     probe_name            = "vault-health"
-    authentication_certificate{
-       name = "server-0"
-    }
-    authentication_certificate{
-       name = "server-1"
-    }
-    authentication_certificate{
-       name = "server-2"
-    }
+    trusted_root_certificate_names = ["server-0", "server-1", "server-2"]
 
 
   }
