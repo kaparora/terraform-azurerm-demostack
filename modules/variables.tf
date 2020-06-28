@@ -207,6 +207,11 @@ variable "consullicense" {
   default     = ""
 }
 
+variable "nomadlicense" {
+  description = "Enterprise License for Nomad"
+  default     = ""
+}
+
 variable "namespace" {
   description = "Enterprise License for Consul"
   default     = "demostack"
