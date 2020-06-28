@@ -18,7 +18,7 @@ resource "azurerm_subnet" "nomad-awg" {
   name                 = "${var.demo_prefix}-nomad-awg"
   virtual_network_name = azurerm_virtual_network.awg.name
   resource_group_name  = azurerm_resource_group.demostack.name
-  address_prefix       = "10.0.50.0/24"
+  address_prefixes       = ["10.0.50.0/24"]
 }
 
 
