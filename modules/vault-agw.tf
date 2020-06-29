@@ -45,8 +45,8 @@ resource "azurerm_application_gateway" "vault-awg" {
   location            = var.location
 
   sku {
-    name     = "Standard_v2"
-    tier     = "Standard_v2"
+    name     = "Standard_Medium"
+    tier     = "Standard"
     capacity = 1
   }
 
